@@ -12,19 +12,19 @@ class SessionsController < ApplicationController
 
         if @user
             login!(@user)
-            redirect_to user_url(@user)
+            redirect_to cats_url
         else
             render :new
         end
     end
 
     def destroy
-        @user = User.find_by_credentials(
-            params[:user][:user_name],
-            params[:user][:password]
-        )
+    #     @user = User.find_by_credentials(
+    #         params[:user][:user_name],
+    #         params[:user][:password]
+    #     )
 
-        @user.destroy
-        redirect_to users_url
+    #     @user.destroy
+    #     redirect_to users_url
     end
 end

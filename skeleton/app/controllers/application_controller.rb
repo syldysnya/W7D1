@@ -13,4 +13,8 @@ class ApplicationController < ActionController::Base
     def logged_in?
         !!current_user
     end
+
+    def require_logged_out
+        redirect_to cats_url if logged_in?
+    end
 end
